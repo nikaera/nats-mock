@@ -1,0 +1,65 @@
+{
+  "name": "nats-mock",
+  "version": "0.0.1",
+  "description": "NATS mock client running in-memory",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && jest",
+    "dev": "node -r esbuild-register src/index.ts",
+    "build": "node -r esbuild-register scripts/build.ts",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "fix": "run-s fix:*",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npx eslint --fix .",
+      "npx prettier --write ."
+    ]
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "nats",
+    "nats.js",
+    "nats.ts",
+    "mock",
+    "test",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikaera/nats-mock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikaera/nats-mock/issues"
+  },
+  "homepage": "https://github.com/nikaera/nats-mock#readme",
+  "author": "nikaera",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/jest": "^28.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "esbuild": "^0.14.43",
+    "esbuild-register": "^3.3.3",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.1",
+    "nats": "^2.7.1",
+    "npm-check-updates": "^13.1.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4.7.3"
+  }
+}
