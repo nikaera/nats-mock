@@ -6,6 +6,7 @@ import { build } from "esbuild";
     outfile: "./lib/index.js",
     platform: "node",
     format: "cjs",
+    minify: true,
     watch: false,
   });
 })().catch((e) => {
